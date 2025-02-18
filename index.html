@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Together For Palestine</title>
+    <link rel="icon" type="image/x-icon" href="icon/favicon.ico">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="history.html" class="nav-link">History</a></li>
+            <li><a href="humanitarian.html" class="nav-link">Humanitarian Aid</a></li>
+            <li><a href="resources.html" class="nav-link">News</a></li>
+            <li><a href="contact.html" class="nav-link">Get Involved</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- Home Page -->
+        <section id="home" class="active">
+            <div class="hero">
+                <h1>Together For Palestine</h1>
+                <p>"You don't need to be muslim to care, You just need to be human"</p>
+            </div>
+            <div class="card-grid">
+                <div class="card">
+                    <iframe width="1025" height="450" src="https://www.youtube.com/embed/-NTlH9nejXY?autoplay=1&mute=1" title="From Lebanon to Palestine: Resisting and Returning together" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+            <div class="card">
+                <h1>About Us</h1>
+                <p>Empowering understanding and action. Explore Palestinian history and the current situation, stay informed with the latest news, and find ways to support the Palestinian people's right to self-determination.</p>
+            </div>
+            <div class="card-grid">
+                <div class="card">
+                    <h1>Our Mission</h1>
+                    <p>"Our mission is to educate the world about the ongoing Israeli occupation of Palestine and the systemic human rights violations against the Palestinian people. We strive to build a movement for justice and equality."</p>
+                </div>
+                <div class="card">
+                    <h1>We Opposed</h1>
+                    <p>"We oppose Israel's actions in Palestine and actively combat the spread of misinformation that justifies or excuses its policies. We seek to expose the truth and build a more informed and just society."</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-slider">
+                    <div class="image-slider-inner" id="slider">
+                        <img src="img/p6.jpg" alt="Image 1">
+                        <img src="img/p7.jpg" alt="Image 2">
+                        <img src="img/p8.jpg" alt="Image 3">
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Together For Palestine. All rights reserved.</p>
+    </footer>
+    <script>
+        // Smooth scroll behavior
+        document.documentElement.style.scrollBehavior = 'smooth';
+
+        // IMAGE SLIDE 
+        const slider = document.getElementById('slider');
+        const images = slider.querySelectorAll('img');
+        let currentPosition = 0;
+
+        function slide() {
+            currentPosition++;
+            if (currentPosition >= images.length) {
+                currentPosition = 0;
+            }
+            slider.style.transform = `translateX(-${currentPosition * 100}%)`;
+        }
+
+        setInterval(slide, 3000); // Change image every 3 seconds
+    </script>
+</body>
+</html>

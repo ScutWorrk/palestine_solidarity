@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History</title>
+    <link rel="icon" type="image/x-icon" href="icon/favicon.ico">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="history.html" class="nav-link">History</a></li>
+            <li><a href="humanitarian.html" class="nav-link">Humanitarian Aid</a></li>
+            <li><a href="resources.html" class="nav-link">News</a></li>
+            <li><a href="contact.html" class="nav-link">Get Involved</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- History Page -->
+        <section id="history" class="active">
+            <h2>Historical Context</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>Early 20th Century</h3>
+                    <h4>Balfour Declaration (1917)</h4>
+                    <p>The Balfour Declaration, issued by the British government in 1917, supported the creation of a Jewish homeland in Palestine, which was then part of the Ottoman Empire. This declaration, written in a letter to a prominent Jewish leader, was a significant step towards the eventual establishment of the State of Israel.</p>
+                    <div class="image-gallery">
+                        <img src="img/1917-1939.jpg" alt="1917 map" class="gallery-image" data-src="img/1917-1939.jpg">
+                        <img src="img/1939-1945.jpg" alt="1939 map" class="gallery-image" data-src="img/1939-1945.jpg">
+                    </div>
+                    <p>A large-scale Jewish migration to Palestine began, accelerated by Jewish people fleeing Nazism in Europe. Between 1918 and 1947, the Jewish population in Palestine increased from 6 percent to 33 percent.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Mid-20th Century</h3>
+                    <h4>UN Partition Plan (1947)</h4>
+                    <p>As violence ravaged Palestine, the matter was referred to the newly formed United Nations. In 1947, the UN adopted Resolution 181, which called for the partition of Palestine into Arab and Jewish states, handing over about 55 percent of the land to Jews. Arabs were granted 45 percent of the land, while Jerusalem was declared a separate internationalised territory.</p>
+                    <div class="image-gallery">
+                        <img src="img/1947-1949.jpg" alt="1947 map" class="gallery-image" data-src="img/1947-1949.jpg">
+                    </div>
+                    <h4>The Nakba</h4>
+                    <p>Leading up to Israel’s birth in 1948, more than 750,000 Palestinians were ethnically cleansed from their homes by Zionist militias. This mass exodus came to be known as the Nakba or catastrophe.</p>
+                    <div class="image-gallery">
+                        <img src="img/nakba.jpg" alt="nakba map" class="gallery-image" data-src="img/nakba.jpg">
+                        <img src="img/westbank.jpg" alt="westbank map" class="gallery-image" data-src="img/westbank.jpg">
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <h3>Recent History</h3>
+                    <h4>Israel-Hamas ceasefire</h4>
+                    <p>The deal includes a temporary ceasefire that will, for now, bring to an end the destruction visited upon Gaza, as well as the release of captives held in Gaza and many of the prisoners held by Israel. The deal will also, finally, allow displaced Palestinians to return to their homes – though after Israel’s deliberate destruction campaign, many homes no longer remain.</p>
+                    <div class="image-gallery">
+                        <img src="img/ceasefire.jpg" alt="ceasefire" class="gallery-image" data-src="img/ceasefire.jpg">
+                    </div>
+                    <p>The initial phase will last six weeks, and will involve a limited prisoner exchange, the partial withdrawal of Israeli troops in Gaza and a surge of aid into the enclave.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Together For Palestine. All rights reserved.</p>
+    </footer>
+
+    <!-- Modal Structure -->
+    <div id="image-modal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+    </div>
+
+    <script>
+        // Smooth scroll behavior
+        document.documentElement.style.scrollBehavior = 'smooth';
+
+        // Get the modal
+        var modal = document.getElementById("image-modal");
+
+        // Get the image and insert it inside the modal
+        var img = document.getElementsByClassName("gallery-image");
+        var modalImg = document.getElementById("img01");
+        var modalClose = document.getElementsByClassName("close")[0];
+
+        for (var i = 0; i < img.length; i++) {
+            img[i].addEventListener("click", function() {
+                modal.style.display = "block";
+                modalImg.src = this.src;
+            });
+        }
+
+        // Get the <span> element that closes the modal
+        modalClose.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
