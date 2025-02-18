@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +8,10 @@
     <link rel="icon" type="image/x-icon" href="icon/favicon.ico">
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <nav>
+        <p class="site-title">Together For Palestine</p>
         <ul>
             <li><a href="index.html" class="nav-link">Home</a></li>
             <li><a href="history.html" class="nav-link">History</a></li>
@@ -21,40 +24,99 @@
     <main>
         <!-- Home Page -->
         <section id="home" class="active">
-            <div class="hero">
-                <h1>Together For Palestine</h1>
-                <p>"You don't need to be muslim to care, You just need to be human"</p>
+            <!-- Slideshow container -->
+            <div class="slideshow-container">
+                <!-- Full-width images with number and caption text -->
+                <div class="mySlides fade">
+                    <div class="numbertext">1 / 3</div>
+                    <img src="img/p6.jpg" style="width:100%">
+                    <div class="text">
+                        <a href="resources.html" class="btn-link">News</a>
+                    </div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="numbertext">2 / 3</div>
+                    <img src="img/p7.jpg" style="width:100%">
+                    <div class="text">
+                        <a href="contact.html" class="btn-link">Get Involved</a>
+                    </div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="numbertext">3 / 3</div>
+                    <img src="img/p8.jpg" style="width:100%">
+                    <div class="text">
+                        <a href="history.html" class="btn-link">History</a>
+                    </div>
+                </div>
+
+                <!-- Next and previous buttons -->
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
             </div>
+            <br>
+
+            <!-- The dots/circles -->
+            <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+
             <div class="card-grid">
                 <div class="card">
-                    <iframe width="1025" height="450" src="https://www.youtube.com/embed/-NTlH9nejXY?autoplay=1&mute=1" title="From Lebanon to Palestine: Resisting and Returning together" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-                    </iframe>
+                    <iframe width="1025" height="450" src="https://www.youtube.com/embed/-8LZNvZB_n0?autoplay=1&mute=1"
+                        title="HRW: 3,000 Palestinians in Israeli detention without charge, held indefinitely"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
             </div>
             <div class="card">
                 <h1>About Us</h1>
-                <p>Empowering understanding and action. Explore Palestinian history and the current situation, stay informed with the latest news, and find ways to support the Palestinian people's right to self-determination.</p>
+                <p>Empowering understanding and action. Explore Palestinian history and the current situation, stay
+                    informed with the latest news, and find ways to support the Palestinian people's right to
+                    self-determination.</p>
             </div>
             <div class="card-grid">
                 <div class="card">
                     <h1>Our Mission</h1>
-                    <p>"Our mission is to educate the world about the ongoing Israeli occupation of Palestine and the systemic human rights violations against the Palestinian people. We strive to build a movement for justice and equality."</p>
+                    <p>"Our mission is to educate the world about the ongoing Israeli occupation of Palestine and
+                        the systemic human rights violations against the Palestinian people. We strive to build a
+                        movement for justice and equality."</p>
                 </div>
                 <div class="card">
                     <h1>We Opposed</h1>
-                    <p>"We oppose Israel's actions in Palestine and actively combat the spread of misinformation that justifies or excuses its policies. We seek to expose the truth and build a more informed and just society."</p>
+                    <p>"We oppose Israel's actions in Palestine and actively combat the spread of misinformation
+                        that justifies or excuses its policies. We seek to expose the truth and build a more
+                        informed and just society."</p>
                 </div>
             </div>
-            <div class="card">
-                <div class="image-slider">
-                    <div class="image-slider-inner" id="slider">
-                        <img src="img/p6.jpg" alt="Image 1">
-                        <img src="img/p7.jpg" alt="Image 2">
-                        <img src="img/p8.jpg" alt="Image 3">
-                    </div>
+            <br>
+            <h1>Latest News</h1>
+            <br>
+            <div class="resources-grid">
+                <div class="resource-item">
+                    <img src="img/ready assume.jpg" alt="readys">
+                    <h3>Palestinian authority says ready to assume full responsibility in Gaza after ceasefire</h3>
+                    <p>CAIRO – 17 January 2025: The Palestinian Authority announced that it has completed all
+                        preparations to assume full responsibility in the Gaza Strip following the implementation of the
+                        anticipated ceasefire agreement...
+                        <a href="resources.html">READ MORE</a>
+                    </p>
+                </div>
+                <div class="resource-item">
+                    <img src="img/10 jan.webp" alt="10 jan">
+                    <h3>Updates: Israel bombs key sites in Yemen as Gaza carnage continues</h3>
+                    <p>Four Palestinians have been killed in an Israeli strike on Gaza City’s Shujayea. colleagues at Al
+                        Jazeera Arabic are reporting that one Palestinian has been killed and three...
+                        <a href="resources.html">READ MORE</a>
+                    </p>
                 </div>
             </div>
-            
+
+
         </section>
     </main>
     <footer>
@@ -64,20 +126,36 @@
         // Smooth scroll behavior
         document.documentElement.style.scrollBehavior = 'smooth';
 
-        // IMAGE SLIDE 
-        const slider = document.getElementById('slider');
-        const images = slider.querySelectorAll('img');
-        let currentPosition = 0;
+        let slideIndex = 1;
+        showSlides(slideIndex);
 
-        function slide() {
-            currentPosition++;
-            if (currentPosition >= images.length) {
-                currentPosition = 0;
-            }
-            slider.style.transform = `translateX(-${currentPosition * 100}%)`;
+        // Next/previous controls
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
         }
 
-        setInterval(slide, 3000); // Change image every 3 seconds
+        // Thumbnail image controls
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+
+        }
     </script>
 </body>
+
 </html>

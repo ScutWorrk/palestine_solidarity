@@ -8,28 +8,56 @@ body {
     font-family: system-ui, -apple-system, sans-serif;
     line-height: 1.6;
     color: #333;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("img/p5.jpg");
-    background-repeat: repeat; 
-    background-size: cover; 
+    background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5));
+    background-repeat: repeat;
+    background-size: cover;
 }
 
 /* Navigation */
 nav {
-    background: #006847;  /* Palestinian green */
+    background: #006847;
+    /* Palestinian green */
     padding: 1rem;
     position: static;
     width: 100%;
     top: 0;
     z-index: 100;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Site title styles */
+.site-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+    color: #fff;
+    position: relative;
+}
+
+.site-title::before {
+    content: url('icon/favicon.ico');
+    /* Replace with your icon URL */
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Adjust the padding to make space for the icon */
+.site-title {
+    padding-left: 5rem;
+    /* Adjust based on the icon size */
 }
 
 nav ul {
     display: flex;
-    justify-content: center;
+    justify-content: right;
     list-style: none;
     gap: 2rem;
 }
+
 
 nav a {
     color: white;
@@ -40,14 +68,15 @@ nav a {
 
 nav a:hover {
     color: #e6e6e6;
-    border-bottom: 2px solid #ce1126;  /* Palestinian red */
+    border-bottom: 2px solid #ce1126;
+    /* Palestinian red */
 }
 
 /* Main content */
 main {
     margin-top: 4rem;
     padding: 2rem;
-    max-width: 1200px;
+    width: 1200px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -58,51 +87,143 @@ section {
     background-color: white;
     padding: 2rem;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 section.active {
     display: block;
 }
 
-/* Hero section */
-.hero {
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("img/pexels-timo-1192514-10010406 (1).jpg");
-    color: white;
-    padding: 4rem 2rem;
-    text-align: center;
-    border-radius: 8px;
-    margin-bottom: 2rem;
-    border: 4px solid #006847;  /* Palestinian green */
-}
-
-.hero h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    color: white;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-}
-
-.hero p {
-    font-family: 'Brush Script MT', cursive; 
-    font-size: 2em; 
-    color: white; 
-}
-
 h2 {
-    color: #006847;  /* Palestinian green */
+    color: #006847;
+    /* Palestinian green */
     margin-bottom: 1.5rem;
-    border-bottom: 3px solid #ce1126;  /* Palestinian red */
+    border-bottom: 3px solid #ce1126;
+    /* Palestinian red */
     padding-bottom: 0.5rem;
     display: inline-block;
 }
 
 
+/* Slideshow container */
+.slideshow-container {
+    width: 100%;
+    /* Set width to 100% to fit the page */
+    max-height: 650px;
+    /* Set height to 650px */
+    position: relative;
+    margin: auto;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Hide the images by default */
+.mySlides {
+    display: none;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Caption text */
+.text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 75px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+    background-color: #ffffff;
+}
+
+/* Fading animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+/* Button styling */
+.btn-link {
+    background-color: #b6b7b6;
+    color: white;
+    /* White text */
+    padding: 15px 25px;
+    /* Some padding */
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+.btn-link:hover {
+    background-color: #ce1126;
+    /* Darker green on hover */
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
 /* Cards */
 .card-grid {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 5px 5px;
     margin: 2rem 0;
 }
 
@@ -110,20 +231,23 @@ h2 {
     background: white;
     padding: 1.5rem;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
     transition: transform 0.3s;
-    border-top: 4px solid #006847;  /* Palestinian green */
-    position: relative; /* Add this for aspect ratio */
+    border-top: 4px solid #006847;
+    /* Palestinian green */
+    position: relative;
+    /* Add this for aspect ratio */
 
 }
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
 }
 
 .card h3 {
-    color: #ce1126;  /* Palestinian red */
+    color: #ce1126;
+    /* Palestinian red */
     margin-bottom: 1rem;
 }
 
@@ -138,21 +262,28 @@ h2 {
 .image-slider {
     width: 100%;
     overflow: hidden;
-    max-width: 100%; /* Optional: Set a maximum width */
-    display: flex; /* Use flexbox for centering */
-    justify-content: center; /* Center horizontally */
+    max-width: 100%;
+    /* Optional: Set a maximum width */
+    display: flex;
+    /* Use flexbox for centering */
+    justify-content: center;
+    /* Center horizontally */
 }
 
 .image-slider-inner {
     display: flex;
-    transition: transform 0.5s ease-in-out; /* Smooth transition */
+    transition: transform 0.5s ease-in-out;
+    /* Smooth transition */
 }
 
 .image-slider img {
     width: 100%;
-    height: auto; /* Maintain aspect ratio */
-    object-fit: cover; /* Cover the entire container */
-    justify-content: center; /* Center horizontally */
+    height: auto;
+    /* Maintain aspect ratio */
+    object-fit: cover;
+    /* Cover the entire container */
+    justify-content: center;
+    /* Center horizontally */
 }
 
 .human-image-container-1 {
@@ -194,7 +325,8 @@ h2 {
 
 .timeline-item {
     padding: 2rem;
-    border-left: 3px solid #006847;  /* Palestinian green */
+    border-left: 3px solid #006847;
+    /* Palestinian green */
     margin-left: 1rem;
     position: relative;
     margin-bottom: 2rem;
@@ -209,52 +341,10 @@ h2 {
     top: 2rem;
     width: 1.5rem;
     height: 1.5rem;
-    background: #ce1126;  /* Palestinian red */
+    background: #ce1126;
+    /* Palestinian red */
     border-radius: 50%;
     border: 3px solid white;
-}
-
-/* Form styles */
-.contact-form {
-    max-width: 600px;
-    margin: 0 auto;
-    background: white;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
-.form-group {
-    margin-bottom: 1.5rem;
-}
-
-
-input, textarea {
-    width: 100%;
-    padding: 0.8rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    margin-top: 0.5rem;
-}
-
-input:focus, textarea:focus {
-    outline: none;
-    border-color: #006847;  /* Palestinian green */
-    box-shadow: 0 0 0 2px rgba(0,104,71,0.1);
-}
-
-button {
-    background: #006847;  /* Palestinian green */
-    color: white;
-    padding: 0.8rem 1.5rem;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-button:hover {
-    background: #005438;
 }
 
 .range-labels {
@@ -276,27 +366,30 @@ button:hover {
     background: white;
     padding: 1.5rem;
     border-radius: 8px;
-    border-left: 4px solid #ce1126;  /* Palestinian red */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-left: 4px solid #ce1126;
+    /* Palestinian red */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .resource-item h3 {
-    color: #006847;  /* Palestinian green */
+    color: #006847;
+    /* Palestinian green */
 }
 
 .resource-item img {
-    width: 100%; 
-    height: auto; 
-    border-radius: 6px; 
-    object-fit: cover; 
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    object-fit: cover;
 }
 
 .resource-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
 }
 
-html, body {
+html,
+body {
     height: 100%;
     margin: 0;
     padding: 0;
@@ -341,7 +434,7 @@ main {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0,0,0,0.9);
+    background-color: rgba(0, 0, 0, 0.9);
 }
 
 .modal-content {
@@ -369,6 +462,7 @@ main {
         opacity: 0;
         transform: scale(0.5);
     }
+
     to {
         opacity: 1;
         transform: scale(1);
@@ -379,6 +473,155 @@ main {
     .modal-content {
         width: 100%;
     }
+}
+
+/* Form styles */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-top: 0.5rem;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+select:focus {
+    outline: none;
+    border-color: #006847;
+    box-shadow: 0 0 0 2px rgba(0, 104, 71, 0.1);
+}
+
+/* Radio and Checkbox styles */
+.radio-container,
+.checkbox-container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default radio and checkbox */
+.radio-container input,
+.checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Create a custom radio and checkbox */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #eee;
+    border-radius: 50%;
+}
+
+.checkbox-container .checkmark {
+    border-radius: 4px;
+}
+
+/* On mouse-over, add a grey background color */
+.radio-container:hover input~.checkmark,
+.checkbox-container:hover input~.checkmark {
+    background-color: #ccc;
+}
+
+/* When the radio/checkbox is checked, add a blue background */
+.radio-container input:checked~.checkmark,
+.checkbox-container input:checked~.checkmark {
+    background-color: #2196F3;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.radio-container input:checked~.checkmark:after,
+.checkbox-container input:checked~.checkmark:after {
+    display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.radio-container .checkmark:after {
+    top: 7px;
+    left: 7px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: white;
+}
+
+.checkbox-container .checkmark:after {
+    top: 4px;
+    left: 4px;
+    width: 12px;
+    height: 12px;
+    border-radius: 2px;
+    background: white;
+}
+
+/* Range input styles */
+input[type="range"] {
+    width: 100%;
+    margin-top: 0.5rem;
+}
+
+.range-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+}
+
+/* Button styles */
+button {
+    background: #006847;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #005438;
 }
 
 footer {
@@ -399,7 +642,4 @@ footer {
         gap: 1rem;
     }
 
-    .hero h1 {
-        font-size: 2rem;
-    }
 }

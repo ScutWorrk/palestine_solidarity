@@ -9,6 +9,7 @@
 </head>
 <body>
     <nav>
+        <p class="site-title">Together For Palestine</p>
         <ul>
             <li><a href="index.html" class="nav-link">Home</a></li>
             <li><a href="history.html" class="nav-link">History</a></li>
@@ -19,97 +20,80 @@
     </nav>
 
     <main>
-        <!-- Contact/Get Involved Page -->
         <section id="contact" class="active">
             <h2>Get Involved</h2>
             <div class="contact-form">
-                <form id="palestineSurvey">
+                <form action="/action_page.php" id="palestineSurvey">
                     <div class="form-group">
-                        <label class="required" for="name">Full Name</label>
+                        <label for="name">Name:</label>
                         <input type="text" id="name" name="name" required>
                     </div>
-                    
                     <div class="form-group">
-                        <label class="required" for="email">Email Address</label>
+                        <label for="email">Email:</label>
                         <input type="email" id="email" name="email" required>
                     </div>
-                    
                     <div class="form-group">
-                        <label class="required" for="age">Age</label>
-                        <input type="number" id="age" name="age" min="12" max="100" required>
+                        <label for="age">Age:</label>
+                        <input type="number" id="age" name="age" required>
                     </div>
-                    
                     <div class="form-group">
-                        <label class="required" for="nationality">Nationality</label>
-                        <select id="nationality" name="nationality" required>
-                            <option value="">Select your nationality</option>
-                            <option value="PS">Palestine</option>
-                            <option value="US">United States</option>
-                            <option value="UK">United Kingdom</option>
-                            <option value="CA">Canada</option>
-                            <option value="other">Other</option>
+                        <label for="nationality">Nationality:</label>
+                        <select name="nationality" id="nationality">
+                            <option value="USA">USA</option>
+                            <option value="UK">UK</option>
+                            <option value="Germany">Germany</option>
+                            <option value="France">France</option>
                         </select>
                     </div>
-                    
                     <div class="form-group">
-                        <label class="required">Do you support humanitarian aid to Palestine?</label>
-                        <div class="radio-group">
-                            <input type="radio" id="yes" ame="support_aid" value="yes" required>
-                            <label for="yes">Yes</label>
-                            <input type="radio" id="no" ame="support_aid" value="no">
-                            <label for="no">No</label>
-                            <input type="radio" id="unsure" ame="support_aid" value="no">
-                            <label for="unsure">Unsure</label>
-                        </div>
+                        <p>Do you support humanitarian aid to Palestine?</p>
+                        <label class="radio-container">Yes
+                            <input type="radio" name="support_aid" value="yes" required>
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="radio-container">No
+                            <input type="radio" name="support_aid" value="no">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="radio-container">Unsure
+                            <input type="radio" name="support_aid" value="unsure">
+                            <span class="checkmark"></span>
+                        </label>
                     </div>
-                    
                     <div class="form-group">
-                        <label>Which human rights issues concern you most? (Select all that apply)</label>
-                        <div class="checkbox-group">
-                            <label>
-                                <input type="checkbox" name="concerns" value="civilian_casualties">
-                                Civilian casualties
-                            </label>
-                            <label>
-                                <input type="checkbox" name="concerns" value="medical_access">
-                                Access to medical care
-                            </label>
-                            <label>
-                                <input type="checkbox" name="concerns" value="displacement">
-                                Forced displacement
-                            </label>
-                            <label>
-                                <input type="checkbox" name="concerns" value="education">
-                                Access to education
-                            </label>
-                            <label>
-                                <input type="checkbox" name="concerns" value="water">
-                                Access to clean water
-                            </label>
-                        </div>
+                        <p>Which human rights issues concern you the most? (Select all that apply)</p>
+                        <label class="checkbox-container">Civilian casualties
+                            <input type="checkbox" name="concerns" value="civilian_casualties">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="checkbox-container">Access to medical care
+                            <input type="checkbox" name="concerns" value="medical_access">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="checkbox-container">Forced displacement
+                            <input type="checkbox" name="concerns" value="displacement">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="checkbox-container">Access to education
+                            <input type="checkbox" name="concerns" value="education">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="checkbox-container">Access to clean water
+                            <input type="checkbox" name="concerns" value="water">
+                            <span class="checkmark"></span>
+                        </label>
                     </div>
-                    
                     <div class="form-group">
-                        <label for="awareness">Rate your awareness of the situation (1-10)</label>
+                        <p>Rate your awareness of the situation in Palestine:</p>
                         <input type="range" id="awareness" name="awareness" min="1" max="10" value="5">
                         <div class="range-labels">
                             <span>1</span>
-                            <span>5</span>
                             <span>10</span>
                         </div>
                     </div>
-                    
                     <div class="form-group">
-                        <label class="required" for="participation_date">Survey Participation Date</label>
-                        <input type="date" id="participation_date" name="participation_date" required>
+                        <button type="submit">Submit</button>
                     </div>
-                    
-                    <div class="form-group">
-                        <label for="comments">Additional Comments</label>
-                        <textarea id="comments" name="comments" rows="4"></textarea>
-                    </div>
-                    
-                    <button type="submit">Submit Survey</button>
                 </form>
             </div>
         </section>
@@ -118,14 +102,10 @@
         <p>&copy; 2025 Together For Palestine. All rights reserved.</p>
     </footer>
     <script>
-        // Form submission handling
-        document.getElementById('involvement-form').addEventListener('submit', (e) => {
+        document.getElementById('palestineSurvey').addEventListener('submit', (e) => {
             e.preventDefault();
             alert('Thank you for your interest. This is a demo form - in a real website, this would be connected to a backend server.');
         });
-
-        // Smooth scroll behavior
-        document.documentElement.style.scrollBehavior = 'smooth';
     </script>
 </body>
 </html>
